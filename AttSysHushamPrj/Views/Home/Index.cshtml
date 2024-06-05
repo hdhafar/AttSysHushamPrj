@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 200px;">
+
+    <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute;left: 0%; top: 0px; ">
+        <div class="card bg-primary text-white text-center p-3">
+            <figure class="mb-0">
+                <blockquote class="blockquote">
+                    <p>Check In today</p>
+                </blockquote>
+                @if (ViewBag.CheckInbool == true)
+                {
+                    @using (Html.BeginForm("CheckIn", "Home", FormMethod.Post))
+                    {
+                        <button id="update-profile-button" type="submit" class="btn btn-success">Check In</button>
+                        @* <input class="btn btn-primary" tpye="submit" value="Check In"/> *@
+                    }
+                }
+                else
+                {
+                    <p class="font-weight-bolder">@ViewBag.CheckIn</p>
+                }
+               
+            </figure>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+        <div class="card bg-primary text-white text-center p-3">
+            <figure class="mb-0">
+                <figure class="mb-0">
+                    <blockquote class="blockquote">
+                        <p>Check Out today</p>
+                    </blockquote>
+                    @if (ViewBag.CheckOutbool == true)
+                    {
+                        @using (Html.BeginForm("CheckOut", "Home", FormMethod.Post))
+                        {
+                            <button id="update-profile-button" type="submit" class="btn btn-danger">Check Out</button>
+                            @* <input class="btn btn-primary" tpye="submit" value="Check In"/> *@
+                        }
+                    }
+                    else
+                    {
+                        <p class="font-weight-bolder">@ViewBag.CheckOut</p>
+                    }
+                  
+                </figure>
+            </figure>
+        </div>
+   </div>
+       @*  <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+            <div class="card bg-primary text-white text-center p-3">
+                <figure class="mb-0">
+                    <blockquote class="blockquote">
+                        <p>Check In today</p>
+                    </blockquote>
+                    <p class="font-weight-bolder">0</p>
+                </figure>
+            </div>
+        </div> *@
+
+</div>
+
+
+<div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 200px;">
+
+    <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute;left: 0%; top: 0px; ">
+        <div class="card bg-primary text-white text-center p-3">
+            <figure class="mb-0">
+                <blockquote class="blockquote">
+                    <p>Attandance valioation</p>
+                </blockquote>
+                <p class="font-weight-bolder">@ViewBag.totalAttandanceValioation</p>
+            </figure>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+        <div class="card bg-primary text-white text-center p-3">
+            <figure class="mb-0">
+                <blockquote class="blockquote">
+                    <p>Attandance Hours per week </p>
+                </blockquote>
+                <p class="font-weight-bolder">0 </p>
+            </figure>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+        <div class="card bg-primary text-white text-center p-3">
+            <figure class="mb-0">
+                <blockquote class="blockquote">
+                    <p>Check In today</p>
+                </blockquote>
+                <p class="font-weight-bolder">0</p>
+            </figure>
+        </div>
+    </div>
+
+</div>
